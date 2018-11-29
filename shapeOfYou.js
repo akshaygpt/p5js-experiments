@@ -48,7 +48,8 @@ function draw(){
       // rectMode(CENTER);
 
       //use random() to create a shaking effect
-      ellipse(x*vScale, y*vScale, vScale*random(0.8, 1.2), vScale*random(0.4, 1.6));
+      // ellipse(x*vScale, y*vScale, vScale*random(0.8, 1.2), vScale*random(0.4, 1.6));
+      triangle(x*vScale, y*vScale, x*vScale + vScale, y*vScale*random(0.9, 1.1), x*vScale*random(0.9, 1.1), y*vScale + vScale);
     }
   }
 }
