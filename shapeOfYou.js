@@ -7,10 +7,12 @@ var vScale = 16;
 function setup() {
   createCanvas(640, 480);
   pixelDensity(1);
+  noStroke();
 
   //creates a seperate canvas for video
   capture = createCapture(VIDEO);
   capture.size(width/vScale, height/vScale);
+  capture.hide();
 }
 
 
@@ -34,7 +36,19 @@ function draw(){
 
       var bright = (r + g + b)/3
       fill(bright);
-      rect(x*vScale, y*vScale, vScale, vScale);
+
+      //render rectangles based on avg brightness of corresponding video block
+      // rect(x*vScale, y*vScale, vScale, vScale);
+
+      //map the beightness of a block to it's size
+      // var mapSize = map(bright, 0, 255, 0, vScale);
+      // rect(x*vScale, y*vScale, mapSize, mapSize);
+
+      //rect change size taking their middle as the center
+      // rectMode(CENTER);
+
+      //use random() to create a shaking effect
+      ellipse(x*vScale, y*vScale, vScale*random(0.8, 1.2), vScale*random(0.4, 1.6));
     }
   }
 }
