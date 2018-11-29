@@ -5,7 +5,7 @@ var capture;
 var vScale = 16;
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(800, 600);
   pixelDensity(1);
   noStroke();
 
